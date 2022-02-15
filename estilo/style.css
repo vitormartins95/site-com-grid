@@ -1,0 +1,334 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,600;1,500&display=swap');
+
+
+@keyframes seta {
+    from {
+        right:30px ;
+    }
+    to {
+        right: 20px;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --fonte1:'Vollkorn', serif;
+}
+body {
+ font-family: var(--fonte1);
+}
+
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 5px;
+}
+
+/*grid geral*/
+.estrutura {
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) 3fr 300px;
+    grid-template-areas:
+    "header header header" 
+    "sidenav content anuncios" 
+    "footer footer footer";
+}
+/*Header*/
+
+.header {
+    grid-area: header;
+    background-image: linear-gradient(to right, rgb(0, 208, 255), rgb(9, 162, 245), rgb(7, 124, 201));
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+   
+}
+.logo {
+   max-width: 200px;
+   padding: 20px;
+}
+.header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.header nav a {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1.125em;
+    background: rgba(0, 0, 0, 0.104);
+    border-radius: 5px;
+    transition: .2s;
+
+}
+.header nav a:hover {
+    background: rgb(5, 86, 140) ;
+}
+.header li+li {
+    margin-left: 30px;
+}
+/*end header*/
+
+/*Sidenav*/
+
+.sidenav {
+    grid-area: sidenav;
+    background:#fafbfc ;
+    padding: 30px;
+}
+
+.sidenav li a {
+    display: block;
+    min-width: 60px;
+    max-width: 100px;
+    margin: 0 auto 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.152);
+    text-align: center;
+    
+}
+.sidenav li a:hover {
+    background:rgba(5, 154, 199, 0.179) ;
+    transition: .3s;
+}
+
+
+/*end sidenav*/
+
+
+
+
+/*content*/
+.content {
+    grid-area: content;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+.col-wide {
+    grid-column: 1/-1;
+}
+
+/*end Content*/
+
+.imagem-1 {
+    grid-row: span 2;
+    align-self: end;
+}
+.imagem-2 {
+    align-self: flex-end;
+}
+/*estilos content*/
+p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    letter-spacing:-0.005em ;
+    color: rgba(0, 0, 0, 0.775);
+}
+.informacoes p + p {
+    margin-top: 30px;
+}
+.tilulo {
+    color:rgb(7, 124, 201) ;
+}
+.tilulo h1 {
+    font-size: 3.75em;
+    line-height: 1;
+    font-weight: 700;
+}
+.tilulo span {
+    font-size: 0.875em;
+    font-style: italic;
+}
+
+/*Caracteristicas*/
+.caracteristicas {
+    display: flex;
+    align-items: flex-start;
+}
+.caracteristicas > div {
+    width: 80px;
+    text-align: center;
+    background-image: linear-gradient(to right, rgb(0, 208, 255), rgb(9, 162, 245), rgb(7, 124, 201));
+    border-radius: 5px;
+    box-shadow:5px 5px 15px 0px rgba(0, 0, 0, 0.152) ;
+    position: relative;
+
+}
+
+.caracteristicas > div:first-child {
+    margin-right: 30px;
+}
+
+.caracteristicas span {
+    display: block;
+    color:rgb(7, 124, 201) ;
+}
+
+.numero {
+    color:rgb(7, 124, 201) ;
+    font-size: 3em;
+    line-height: 1;
+    margin: 10px auto;
+}
+.rotulo {
+    background: white;
+    border-radius: 0 0px 5px 5px;
+    padding: 5px 0;
+    position: relative;
+    top: 2px;
+}
+.destaque {
+    font-size: 14px;
+    color:rgb(7, 124, 201) ;
+    max-width: 16em;
+
+
+}
+.citacao ,.atributos {
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to right, rgb(0, 208, 255), rgb(9, 162, 245), rgb(7, 124, 201));
+    align-self: start;
+   
+}
+.citacao p {
+    font-size:1.5em ;
+    font-style: italic;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    color: white;
+
+}
+.atributos li {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.125em;
+    padding: 15px;
+
+}
+.atributos li +li {
+    border-top: 2px solid rgb(41, 158, 237) ; ;
+}
+
+
+/*anuncio*/
+
+.anuncios {
+    grid-area: anuncios;
+    background: #fafbfc ;
+    display: grid;
+    align-content: start;
+    padding: 30px;
+    grid-gap: 30px;
+}
+.footer {
+    grid-area: footer ;
+    background: #fafbfc ;
+    background-image: linear-gradient(to right, rgb(0, 208, 255), rgb(9, 162, 245), rgb(7, 124, 201));
+
+
+}
+.footer p {
+    color: rgba(255, 255, 255, 0.652);
+    text-align: center;
+    padding: 30px;
+    padding-bottom: 0;
+   
+
+}
+.footer > .seguro {
+  
+   
+}
+.footer > .seguro::after {
+    content: '✔️';
+    
+
+} 
+
+@media(max-width: 1200px){
+ .estrutura {
+    grid-template-columns: minmax(150px, 1fr) 3fr;
+     grid-template-areas:
+      "header header "
+      "sidenav content"
+      "sidenav anuncios "
+      "footer footer ";
+ }
+}
+@media (max-width:700px) {
+    .estrutura {
+        grid-template-columns:100% ;
+        grid-template-areas:
+        "header"
+        "sidenav "
+        "content"
+        "anuncios "
+        "footer";
+    }
+    .header {
+        grid-template-columns: auto;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+    .header nav a {
+        font-size: 1em;    
+    }
+    .header li+li {
+        margin-left: 10px;
+    }
+    .sidenav ul {
+        display: flex;
+    }
+    .sidenav ul > li {
+        flex: 1 0 60px;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+    .sidenav {
+        position: relative;
+        padding: 0 30px;
+        overflow-x: auto;
+    }
+    .sidenav li a {
+        margin: 30px 30px 30px 0;
+    }
+    .sidenav::after {
+        content: '→ ';
+        position: absolute;
+        top: 5px;
+        right: 30px;
+        color: rgba(0, 0, 0, 0.165);
+        animation: seta .5s ease-in 0s infinite alternate ;
+    }
+
+      
+}
+
+@media(max-width:600px) {
+    .content {
+        grid-template-columns: auto;
+    }
+}
+
+
+
