@@ -317,8 +317,9 @@ p {
         position: absolute;
         top: 5px;
         right: 30px;
-        color: rgba(0, 0, 0, 0.165);
+        color: rgba(26, 170, 237, 0.289);
         animation: seta .5s ease-in 0s infinite alternate ;
+        font-size: 20px;
     }
 
       
